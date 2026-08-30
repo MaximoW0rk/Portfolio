@@ -59,7 +59,7 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #888;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       font-weight: 600;
     }
 
@@ -69,6 +69,21 @@
       grid-template-columns: repeat(5, 1fr);
       gap: 15px;
       width: 100%;
+    }
+
+    .card-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #aaa;
+      font-weight: 600;
+      text-align: center;
     }
 
     .card-vertical {
@@ -208,28 +223,49 @@
     </section>
 
     <section>
-      <div class="section-title">Formato Vertical</div>
+      <div class="section-title">Contenido Vertical / Shorts & Reels</div>
       <div class="vertical-grid">
-        <div class="card-vertical">
-          <iframe src="https://streamable.com/e/xc6uvr?thumbnail=1" allowfullscreen></iframe>
+        
+        <div class="card-wrapper">
+          <div class="card-label">Negocios / Marcas</div>
+          <div class="card-vertical">
+            <iframe src="https://streamable.com/e/xc6uvr?thumbnail=1" allowfullscreen></iframe>
+          </div>
         </div>
-        <div class="card-vertical">
-          <iframe src="https://streamable.com/e/cwp94y?thumbnail=1" allowfullscreen></iframe>
+
+        <div class="card-wrapper">
+          <div class="card-label">Creadores / Hablado</div>
+          <div class="card-vertical">
+            <iframe src="https://streamable.com/e/cwp94y?thumbnail=1" allowfullscreen></iframe>
+          </div>
         </div>
-        <div class="card-vertical">
-          <iframe src="https://streamable.com/e/04o7j3?thumbnail=1" allowfullscreen></iframe>
+
+        <div class="card-wrapper">
+          <div class="card-label">Streams / Gaming</div>
+          <div class="card-vertical">
+            <iframe src="https://streamable.com/e/04o7j3?thumbnail=1" allowfullscreen></iframe>
+          </div>
         </div>
-        <div class="card-vertical">
-          <iframe src="https://streamable.com/e/fuc9ig?thumbnail=1" allowfullscreen></iframe>
+
+        <div class="card-wrapper">
+          <div class="card-label">Edits / Dinámico</div>
+          <div class="card-vertical">
+            <iframe src="https://streamable.com/e/fuc9ig?thumbnail=1" allowfullscreen></iframe>
+          </div>
         </div>
-        <div class="card-vertical">
-          <iframe src="https://streamable.com/e/994uk0?thumbnail=1" allowfullscreen></iframe>
+
+        <div class="card-wrapper">
+          <div class="card-label">Muestra de Producto</div>
+          <div class="card-vertical">
+            <iframe src="https://streamable.com/e/994uk0?thumbnail=1" allowfullscreen></iframe>
+          </div>
         </div>
+
       </div>
     </section>
 
     <section>
-      <div class="section-title">Formato Horizontal</div>
+      <div class="section-title">Contenido Horizontal / Resúmenes de Stream & Vlogs</div>
       <div class="horizontal-card">
         <iframe src="https://streamable.com/e/w30tij?thumbnail=1" allowfullscreen></iframe>
       </div>
