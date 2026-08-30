@@ -53,7 +53,7 @@
       text-transform: uppercase;
     }
 
-    /* SECCIÓN VIDEOS VERTICALES */
+    /* TITULOS DE SECCION */
     .section-title {
       font-size: 14px;
       letter-spacing: 2px;
@@ -63,6 +63,7 @@
       font-weight: 600;
     }
 
+    /* GRILLA VERTICAL (5 VIDEOS) */
     .vertical-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -77,9 +78,10 @@
       aspect-ratio: 9 / 16;
       overflow: hidden;
       transition: transform 0.2s ease, border-color 0.2s ease;
+      position: relative;
     }
 
-    /* VIDEO HORIZONTAL */
+    /* TARJETA HORIZONTAL */
     .horizontal-card {
       background-color: #111;
       border: 1px solid #222;
@@ -88,6 +90,7 @@
       overflow: hidden;
       width: 100%;
       transition: transform 0.2s ease, border-color 0.2s ease;
+      position: relative;
     }
 
     .card-vertical:hover, .horizontal-card:hover {
@@ -95,14 +98,14 @@
       border-color: #444;
     }
 
-    video {
+    iframe {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      border: none;
       display: block;
     }
 
-    /* SECCIÓN SERVICIOS Y TÉRMINOS (TARJETAS PRO) */
+    /* SERVICIOS Y TERMINOS */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -124,9 +127,6 @@
       font-size: 18px;
       font-weight: 700;
       letter-spacing: 0.5px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
     .service-card ul {
@@ -151,7 +151,7 @@
       color: #666;
     }
 
-    /* FOOTER / CONTACTO */
+    /* FOOTER */
     footer {
       border-top: 1px solid #222;
       padding-top: 30px;
@@ -183,7 +183,7 @@
       color: #888;
     }
 
-    /* ADAPTACIÓN A CELULARES */
+    /* RESPONSIVE CELULAR */
     @media (max-width: 768px) {
       .vertical-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -198,60 +198,43 @@
 
   <div class="container">
     
-    <!-- ENCABEZADO -->
     <header>
       <span>MAXIMO GALBARINO</span>
       <span>PORTFOLIO</span>
     </header>
 
-    <!-- TÍTULO GIGANTE -->
     <section class="hero">
       <h1>VIDEO<br>EDITOR</h1>
     </section>
 
-    <!-- TRABAJOS VERTICALES -->
     <section>
       <div class="section-title">Formato Vertical</div>
       <div class="vertical-grid">
         <div class="card-vertical">
-          <video controls poster="https://via.placeholder.com/300x533/111/444?text=Reel+1">
-            <source src="video1.mp4" type="video/mp4">
-          </video>
+          <iframe src="https://streamable.com/e/CODIGO_1" allowfullscreen></iframe>
         </div>
         <div class="card-vertical">
-          <video controls poster="https://via.placeholder.com/300x533/111/444?text=Reel+2">
-            <source src="video2.mp4" type="video/mp4">
-          </video>
+          <iframe src="https://streamable.com/e/CODIGO_2" allowfullscreen></iframe>
         </div>
         <div class="card-vertical">
-          <video controls poster="https://via.placeholder.com/300x533/111/444?text=Reel+3">
-            <source src="video3.mp4" type="video/mp4">
-          </video>
+          <iframe src="https://streamable.com/e/CODIGO_3" allowfullscreen></iframe>
         </div>
         <div class="card-vertical">
-          <video controls poster="https://via.placeholder.com/300x533/111/444?text=Reel+4">
-            <source src="video4.mp4" type="video/mp4">
-          </video>
+          <iframe src="https://streamable.com/e/CODIGO_4" allowfullscreen></iframe>
         </div>
         <div class="card-vertical">
-          <video controls poster="https://via.placeholder.com/300x533/111/444?text=Reel+5">
-            <source src="video5.mp4" type="video/mp4">
-          </video>
+          <iframe src="https://streamable.com/e/CODIGO_5" allowfullscreen></iframe>
         </div>
       </div>
     </section>
 
-    <!-- TRABAJO HORIZONTAL -->
     <section>
       <div class="section-title">Formato Horizontal</div>
       <div class="horizontal-card">
-        <video controls poster="https://via.placeholder.com/1280x720/111/444?text=Video+Horizontal">
-          <source src="videomain.mp4" type="video/mp4">
-        </video>
+        <iframe src="https://streamable.com/e/CODIGO_HORIZONTAL" allowfullscreen></iframe>
       </div>
     </section>
 
-    <!-- SERVICIOS Y CONDICIONES (REDISENADO PRO) -->
     <section>
       <div class="section-title">Servicios & Condiciones</div>
       <div class="services-grid">
@@ -277,7 +260,6 @@
       </div>
     </section>
 
-    <!-- CONTACTO -->
     <footer>
       <h4>CONTACTO</h4>
       <div class="links">
@@ -288,6 +270,9 @@
     </footer>
 
   </div>
+
+</body>
+</html>
 
 </body>
 </html>
