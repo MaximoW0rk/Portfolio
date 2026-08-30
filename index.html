@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAXIMO GALBARINO | Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: #0d0d0d;
+      color: #ffffff;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    /* ENCABEZADO */
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 14px;
+      border-bottom: 1px solid #222;
+      padding-bottom: 15px;
+    }
+
+    /* GRILLA DE VIDEOS VERTICALES (5 COLUMNAS) */
+    .vertical-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+      width: 100%;
+    }
+
+    .card-vertical {
+      background-color: #181818;
+      border: 1px solid #333;
+      border-radius: 16px;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card-vertical:hover, .horizontal-card:hover {
+      transform: translateY(-4px);
+      border-color: #666;
+    }
+
+    /* VIDEO HORIZONTAL DESTACADO */
+    .horizontal-section {
+      width: 65%;
+    }
+
+    .horizontal-card {
+      background-color: #181818;
+      border: 1px solid #333;
+      border-radius: 16px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ESTILO DE LOS VIDEOS */
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* SECCIÓN TÉRMINOS Y SERVICIOS */
+    .info-section {
+      text-align: center;
+      max-width: 600px;
+      margin-top: 10px;
+    }
+
+    .info-section h3 {
+      font-size: 15px;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .info-section ul {
+      list-style: none;
+      font-size: 13px;
+      color: #aaa;
+      line-height: 1.6;
+    }
+
+    /* CONTACTO / FOOTER */
+    footer {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    footer h4 {
+      font-size: 13px;
+      letter-spacing: 1.5px;
+    }
+
+    .links {
+      display: flex;
+      gap: 15px;
+      font-size: 14px;
+    }
+
+    .links a {
+      color: #fff;
+      text-decoration: none;
+      color: #ccc;
+      transition: color 0.2s;
+    }
+
+    .links a:hover {
+      color: #fff;
+    }
+
+    /* RESPONSIVE PARA CELULARES */
+    @media (max-width: 768px) {
+      .vertical-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .horizontal-section {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <header>
+      <span>MAXIMO GALBARINO</span>
+      <span>PORTFOLIO</span>
+    </header>
+
+    <main class="vertical-grid">
+      <div class="card-vertical">
+        <video controls poster="https://via.placeholder.com/300x533/222/fff?text=Poster+1">
+          <source src="TU_VIDEO_1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="card-vertical">
+        <video controls poster="https://via.placeholder.com/300x533/222/fff?text=Poster+2">
+          <source src="TU_VIDEO_2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="card-vertical">
+        <video controls poster="https://via.placeholder.com/300x533/222/fff?text=Poster+3">
+          <source src="TU_VIDEO_3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="card-vertical">
+        <video controls poster="https://via.placeholder.com/300x533/222/fff?text=Poster+4">
+          <source src="TU_VIDEO_4.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="card-vertical">
+        <video controls poster="https://via.placeholder.com/300x533/222/fff?text=Poster+5">
+          <source src="TU_VIDEO_5.mp4" type="video/mp4">
+        </video>
+      </div>
+    </main>
+
+    <section class="horizontal-section">
+      <div class="horizontal-card">
+        <video controls poster="https://via.placeholder.com/800x450/222/fff?text=Video+Horizontal">
+          <source src="TU_VIDEO_HORIZONTAL.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h3>Términos y Condiciones / Servicios</h3>
+      <ul>
+        <li>• <strong>Servicios:</strong> Edición de Video Profesional (Reels, TikTok, YouTube).</li>
+        <li>• <strong>Términos:</strong> Revisiones incluidas, tiempos de entrega claros.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <h4>CONTACTO</h4>
+      <div class="links">
+        <a href="https://instagram.com" target="_blank">Instagram</a> •
+        <a href="https://wa.me/" target="_blank">WhatsApp</a> •
+        <a href="mailto:tuemail@gmail.com">Mail ✉</a>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
