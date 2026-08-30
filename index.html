@@ -3,30 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAXIMO GALBARINO | Portfolio</title>
+  <title>MAXIMO GALBARINO | Video Editor</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
     }
 
     body {
-      background-color: #0d0d0d;
+      background-color: #000000;
       color: #ffffff;
-      padding: 40px 20px;
+      padding: 40px 5%;
       display: flex;
       justify-content: center;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 40px;
+      gap: 50px;
     }
 
     /* ENCABEZADO */
@@ -36,13 +35,34 @@
       justify-content: space-between;
       align-items: center;
       font-weight: 700;
-      letter-spacing: 1px;
-      font-size: 14px;
-      border-bottom: 1px solid #222;
-      padding-bottom: 15px;
+      letter-spacing: 2px;
+      font-size: 13px;
     }
 
-    /* GRILLA DE VIDEOS VERTICALES (5 COLUMNAS) */
+    /* HERO: VIDEO EDITOR GIGANTE */
+    .hero {
+      width: 100%;
+      padding-top: 10px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 10vw, 7.5rem);
+      font-weight: 900;
+      line-height: 0.85;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+    }
+
+    /* SECCIÓN VIDEOS VERTICALES */
+    .section-title {
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
     .vertical-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -51,35 +71,30 @@
     }
 
     .card-vertical {
-      background-color: #181818;
-      border: 1px solid #333;
-      border-radius: 16px;
+      background-color: #111;
+      border: 1px solid #222;
+      border-radius: 14px;
       aspect-ratio: 9 / 16;
       overflow: hidden;
-      position: relative;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    /* VIDEO HORIZONTAL */
+    .horizontal-card {
+      background-color: #111;
+      border: 1px solid #222;
+      border-radius: 14px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      width: 100%;
       transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .card-vertical:hover, .horizontal-card:hover {
       transform: translateY(-4px);
-      border-color: #666;
+      border-color: #444;
     }
 
-    /* VIDEO HORIZONTAL DESTACADO */
-    .horizontal-section {
-      width: 65%;
-    }
-
-    .horizontal-card {
-      background-color: #181818;
-      border: 1px solid #333;
-      border-radius: 16px;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* ESTILO DE LOS VIDEOS */
     video {
       width: 100%;
       height: 100%;
@@ -87,65 +102,94 @@
       display: block;
     }
 
-    /* SECCIÓN TÉRMINOS Y SERVICIOS */
-    .info-section {
-      text-align: center;
-      max-width: 600px;
-      margin-top: 10px;
+    /* SECCIÓN SERVICIOS Y TÉRMINOS (TARJETAS PRO) */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 100%;
     }
 
-    .info-section h3 {
-      font-size: 15px;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
+    .service-card {
+      background-color: #121212;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
 
-    .info-section ul {
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .service-card ul {
       list-style: none;
-      font-size: 13px;
-      color: #aaa;
-      line-height: 1.6;
-    }
-
-    /* CONTACTO / FOOTER */
-    footer {
-      text-align: center;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-top: 10px;
+    }
+
+    .service-card li {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .service-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #666;
+    }
+
+    /* FOOTER / CONTACTO */
+    footer {
+      border-top: 1px solid #222;
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     footer h4 {
-      font-size: 13px;
-      letter-spacing: 1.5px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #888;
     }
 
     .links {
       display: flex;
-      gap: 15px;
-      font-size: 14px;
+      gap: 20px;
+      font-size: 15px;
+      font-weight: 500;
     }
 
     .links a {
       color: #fff;
       text-decoration: none;
-      color: #ccc;
       transition: color 0.2s;
     }
 
     .links a:hover {
-      color: #fff;
+      color: #888;
     }
 
-    /* RESPONSIVE PARA CELULARES */
+    /* ADAPTACIÓN A CELULARES */
     @media (max-width: 768px) {
       .vertical-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .horizontal-section {
-        width: 100%;
+      .services-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -154,61 +198,92 @@
 
   <div class="container">
     
+    <!-- ENCABEZADO -->
     <header>
       <span>MAXIMO GALBARINO</span>
       <span>PORTFOLIO</span>
     </header>
 
-    <main class="vertical-grid">
-      <div class="card-vertical">
-        <video controls poster="https://via.placeholder.com/300x533/222/fff?text=Poster+1">
-          <source src="TU_VIDEO_1.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="card-vertical">
-        <video controls poster="https://via.placeholder.com/300x533/222/fff?text=Poster+2">
-          <source src="TU_VIDEO_2.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="card-vertical">
-        <video controls poster="https://via.placeholder.com/300x533/222/fff?text=Poster+3">
-          <source src="TU_VIDEO_3.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="card-vertical">
-        <video controls poster="https://via.placeholder.com/300x533/222/fff?text=Poster+4">
-          <source src="TU_VIDEO_4.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="card-vertical">
-        <video controls poster="https://via.placeholder.com/300x533/222/fff?text=Poster+5">
-          <source src="TU_VIDEO_5.mp4" type="video/mp4">
-        </video>
-      </div>
-    </main>
+    <!-- TÍTULO GIGANTE -->
+    <section class="hero">
+      <h1>VIDEO<br>EDITOR</h1>
+    </section>
 
-    <section class="horizontal-section">
+    <!-- TRABAJOS VERTICALES -->
+    <section>
+      <div class="section-title">Formato Vertical</div>
+      <div class="vertical-grid">
+        <div class="card-vertical">
+          <video controls poster="https://via.placeholder.com/300x533/111/444?text=Reel+1">
+            <source src="video1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-vertical">
+          <video controls poster="https://via.placeholder.com/300x533/111/444?text=Reel+2">
+            <source src="video2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-vertical">
+          <video controls poster="https://via.placeholder.com/300x533/111/444?text=Reel+3">
+            <source src="video3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-vertical">
+          <video controls poster="https://via.placeholder.com/300x533/111/444?text=Reel+4">
+            <source src="video4.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-vertical">
+          <video controls poster="https://via.placeholder.com/300x533/111/444?text=Reel+5">
+            <source src="video5.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRABAJO HORIZONTAL -->
+    <section>
+      <div class="section-title">Formato Horizontal</div>
       <div class="horizontal-card">
-        <video controls poster="https://via.placeholder.com/800x450/222/fff?text=Video+Horizontal">
-          <source src="TU_VIDEO_HORIZONTAL.mp4" type="video/mp4">
+        <video controls poster="https://via.placeholder.com/1280x720/111/444?text=Video+Horizontal">
+          <source src="videomain.mp4" type="video/mp4">
         </video>
       </div>
     </section>
 
-    <section class="info-section">
-      <h3>Términos y Condiciones / Servicios</h3>
-      <ul>
-        <li>• <strong>Servicios:</strong> Edición de Video Profesional (Reels, TikTok, YouTube).</li>
-        <li>• <strong>Términos:</strong> Revisiones incluidas, tiempos de entrega claros.</li>
-      </ul>
+    <!-- SERVICIOS Y CONDICIONES (REDISENADO PRO) -->
+    <section>
+      <div class="section-title">Servicios & Condiciones</div>
+      <div class="services-grid">
+        
+        <div class="service-card">
+          <h3>Edición & Formatos</h3>
+          <ul>
+            <li>Especializado en Reels, TikToks y YouTube Shorts.</li>
+            <li>Proyectos en formato horizontal (YouTube / Contenido largo).</li>
+            <li>Subtítulos dinámicos, retención visual y diseño de sonido.</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h3>Términos de Trabajo</h3>
+          <ul>
+            <li>Optimización de ritmo y formato según la plataforma.</li>
+            <li>Hasta 3 rondas de revisiones incluidas por proyecto.</li>
+            <li>Entregas coordinadas en tiempos pactados.</li>
+          </ul>
+        </div>
+
+      </div>
     </section>
 
+    <!-- CONTACTO -->
     <footer>
       <h4>CONTACTO</h4>
       <div class="links">
         <a href="https://instagram.com" target="_blank">Instagram</a> •
         <a href="https://wa.me/" target="_blank">WhatsApp</a> •
-        <a href="mailto:tuemail@gmail.com">Mail ✉</a>
+        <a href="mailto:tuemail@gmail.com">Mail</a>
       </div>
     </footer>
 
