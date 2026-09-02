@@ -3,316 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAXIMO GALBARINO | Video Editor</title>
+  <title>MAXIMO GALBARINO | PORTFOLIO</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
     }
-
     body {
-      background-color: #000000;
-      color: #ffffff;
-      padding: 40px 5%;
-      display: flex;
-      justify-content: center;
-    }
-
-    .container {
-      max-width: 1100px;
-      width: 100%;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      gap: 50px;
+      align-items: center;
     }
-
-    /* ENCABEZADO */
     header {
       width: 100%;
+      max-width: 900px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      font-weight: 700;
-      letter-spacing: 2px;
-      font-size: 13px;
-    }
-
-    /* HERO: VIDEO EDITOR GIGANTE */
-    .hero {
-      width: 100%;
-      padding-top: 10px;
-    }
-
-    .hero h1 {
-      font-size: clamp(3rem, 10vw, 7.5rem);
-      font-weight: 900;
-      line-height: 0.85;
-      letter-spacing: -2px;
+      margin-bottom: 40px;
       text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
     }
-
-    /* TITULOS DE SECCION */
+    h1 {
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 40px;
+      text-align: left;
+      width: 100%;
+      max-width: 900px;
+    }
     .section-title {
       font-size: 14px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #888;
       margin-bottom: 20px;
-      font-weight: 600;
+      width: 100%;
+      max-width: 900px;
     }
-
-    /* GRILLA VERTICAL (5 VIDEOS) */
-    .vertical-grid {
+    .grid-vertical {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 15px;
-      width: 100%;
-    }
-
-    .card-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .card-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #aaa;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    .card-vertical {
-      background-color: #111;
-      border: 1px solid #222;
-      border-radius: 14px;
-      aspect-ratio: 9 / 16;
-      overflow: hidden;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-      position: relative;
-    }
-
-    /* TARJETA HORIZONTAL */
-    .horizontal-card {
-      background-color: #111;
-      border: 1px solid #222;
-      border-radius: 14px;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      width: 100%;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-      position: relative;
-    }
-
-    .card-vertical:hover, .horizontal-card:hover {
-      transform: translateY(-4px);
-      border-color: #444;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    /* SERVICIOS Y TERMINOS */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       width: 100%;
+      max-width: 900px;
+      margin-bottom: 50px;
     }
-
-    .service-card {
-      background-color: #121212;
-      border: 1px solid #222;
+    .grid-horizontal {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 50px;
+    }
+    .card {
+      background: #111;
       border-radius: 16px;
-      padding: 28px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-    }
-
-    .service-card h3 {
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-
-    .service-card ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .service-card li {
-      font-size: 14px;
-      color: #ccc;
-      line-height: 1.5;
-      position: relative;
-      padding-left: 18px;
-    }
-
-    .service-card li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #666;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid #222;
-      padding-top: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    footer h4 {
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: #888;
-    }
-
-    .links {
-      display: flex;
-      gap: 20px;
-      font-size: 15px;
-      font-weight: 500;
       align-items: center;
     }
-
-    .links a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.2s;
+    .card-title {
+      padding: 12px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #ccc;
     }
-
-    .links a:hover {
+    .video-container-vertical {
+      position: relative;
+      width: 100%;
+      padding-bottom: 177.77%; /* Aspect Ratio 9:16 */
+      height: 0;
+    }
+    .video-container-horizontal {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
+      height: 0;
+    }
+    .video-container-vertical iframe,
+    .video-container-horizontal iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    footer h4 {
+      margin-bottom: 10px;
       color: #888;
     }
-
-    .links span.disabled {
-      color: #555;
-      cursor: not-allowed;
+    footer a {
+      color: #fff;
+      text-decoration: none;
     }
-
-    /* RESPONSIVE CELULAR */
-    @media (max-width: 768px) {
-      .vertical-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <header>
+    <div>MAXIMO GALBARINO</div>
+    <div>PORTFOLIO</div>
+  </header>
+
+  <h1>VIDEO<br>EDITOR</h1>
+
+  <!-- CONTENIDO VERTICAL -->
+  <div class="section-title">CONTENIDO VERTICAL</div>
+  <div class="grid-vertical">
     
-    <header>
-      <span>MAXIMO GALBARINO</span>
-      <span>PORTFOLIO</span>
-    </header>
-
-    <section class="hero">
-      <h1>VIDEO<br>EDITOR</h1>
-    </section>
-
-    <section>
-      <div class="section-title">Contenido Vertical</div>
-      <div class="vertical-grid">
-        
-        <div class="card-wrapper">
-          <div class="card-label">Edits</div>
-          <div class="card-vertical">
-            <iframe src="https://streamable.com/e/xc6uvr?thumbnail=1" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div class="card-wrapper">
-          <div class="card-label">Anuncios</div>
-          <div class="card-vertical">
-            <iframe src="https://streamable.com/e/cwp94y?thumbnail=1" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div class="card-wrapper">
-          <div class="card-label">Streams</div>
-          <div class="card-vertical">
-            <iframe src="https://streamable.com/e/04o7j3?thumbnail=1" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div class="card-wrapper">
-          <div class="card-label">Muestra de Producto</div>
-          <div class="card-vertical">
-            <iframe src="https://streamable.com/e/fuc9ig?thumbnail=1" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div class="card-wrapper">
-          <div class="card-label">Creadores de Contenido</div>
-          <div class="card-vertical">
-            <iframe src="https://streamable.com/e/994uk0?thumbnail=1" allowfullscreen></iframe>
-          </div>
-        </div>
-
+    <!-- EDITS -->
+    <div class="card">
+      <div class="card-title">EDITS</div>
+      <div class="video-container-vertical">
+        <iframe src="https://www.youtube.com/embed/w5hy_9a_FPw" allowfullscreen></iframe>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="section-title">Contenido Horizontal</div>
-      <div class="horizontal-card">
-        <iframe src="https://streamable.com/e/w30tij?thumbnail=1" allowfullscreen></iframe>
+    <!-- ANUNCIOS -->
+    <div class="card">
+      <div class="card-title">ANUNCIOS</div>
+      <div class="video-container-vertical">
+        <iframe src="https://www.youtube.com/embed/ajR8cmi6bQ4" allowfullscreen></iframe>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="section-title">Servicios & Condiciones</div>
-      <div class="services-grid">
-        
-        <div class="service-card">
-          <h3>Edición & Formatos</h3>
-          <ul>
-            <li>Especializado en Reels, TikToks y YouTube Shorts.</li>
-            <li>Proyectos en formato horizontal (YouTube / Contenido largo).</li>
-            <li>Subtítulos dinámicos, retención visual y diseño de sonido.</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <h3>Términos de Trabajo</h3>
-          <ul>
-            <li>Optimización de ritmo y formato según la plataforma.</li>
-            <li>Hasta 3 rondas de revisiones incluidas por proyecto.</li>
-            <li>Entregas coordinadas en tiempos pactados.</li>
-          </ul>
-        </div>
-
+    <!-- STREAMS -->
+    <div class="card">
+      <div class="card-title">STREAMS</div>
+      <div class="video-container-vertical">
+        <iframe src="https://www.youtube.com/embed/3FtegYgYsRI" allowfullscreen></iframe>
       </div>
-    </section>
+    </div>
 
- <!-- CONTACTO -->
-    <footer>
-      <h4>CONTACTO</h4>
-      <div class="links">
-        <a href="https://www.instagram.com/max.galbarino/" target="_blank">Instagram</a> •
-        <a href="https://wa.me/5491150159999" target="_blank">WhatsApp</a> •
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=p1pox.work@gmail.com" target="_blank">Mail</a>
+    <!-- MUESTRA DE PRODUCTO -->
+    <div class="card">
+      <div class="card-title">MUESTRA DE PRODUCTO</div>
+      <div class="video-container-vertical">
+        <iframe src="https://www.youtube.com/embed/S1Mn7ahUd1A" allowfullscreen></iframe>
       </div>
-    </footer>
+    </div>
+
+    <!-- CREADORES DE CONTENIDO -->
+    <div class="card">
+      <div class="card-title">CREADORES DE CONTENIDO</div>
+      <div class="video-container-vertical">
+        <iframe src="https://www.youtube.com/embed/ODc0clRwwU4" allowfullscreen></iframe>
+      </div>
+    </div>
 
   </div>
+
+  <!-- CONTENIDO HORIZONTAL -->
+  <div class="section-title">CONTENIDO HORIZONTAL</div>
+  <div class="grid-horizontal">
+    
+    <div class="card">
+      <div class="card-title">EDICION HORIZONTAL / YOUTUBE</div>
+      <div class="video-container-horizontal">
+        <iframe src="https://www.youtube.com/embed/zZnFmFolx6Y" allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTACTO -->
+  <footer>
+    <h4>CONTACTO</h4>
+    <div class="links">
+      <a href="https://www.instagram.com/max.galbarino/" target="_blank">Instagram</a> •
+      <a href="https://wa.me/5491150159999" target="_blank">WhatsApp</a> •
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=p1pox.work@gmail.com" target="_blank">Mail</a>
+    </div>
+  </footer>
 
 </body>
 </html>
