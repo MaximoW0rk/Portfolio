@@ -21,59 +21,90 @@
     }
     header {
       width: 100%;
-      max-width: 900px;
+      max-width: 800px;
       display: flex;
       justify-content: space-between;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       text-transform: uppercase;
-      font-size: 14px;
+      font-size: 13px;
       letter-spacing: 1px;
     }
     h1 {
-      font-size: 48px;
+      font-size: 38px;
       font-weight: 900;
       line-height: 1;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       text-align: left;
       width: 100%;
-      max-width: 900px;
+      max-width: 800px;
     }
     .section-title {
-      font-size: 14px;
+      font-size: 13px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #888;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       width: 100%;
-      max-width: 900px;
+      max-width: 800px;
     }
+    
+    /* SERVICIOS */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+    .service-card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .service-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .service-card p {
+      font-size: 12px;
+      color: #aaa;
+      line-height: 1.5;
+    }
+
+    /* GRILLA VERTICAL COMPACTA */
     .grid-vertical {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
       width: 100%;
-      max-width: 900px;
-      margin-bottom: 50px;
+      max-width: 800px;
+      margin-bottom: 40px;
     }
     .grid-horizontal {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 15px;
       width: 100%;
-      max-width: 900px;
-      margin-bottom: 50px;
+      max-width: 800px;
+      margin-bottom: 40px;
     }
     .card {
       background: #111;
-      border-radius: 16px;
+      border-radius: 12px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     .card-title {
-      padding: 12px;
-      font-size: 12px;
+      padding: 8px;
+      font-size: 11px;
       letter-spacing: 1px;
       text-transform: uppercase;
       color: #ccc;
@@ -100,13 +131,13 @@
       border: 0;
     }
     footer {
-      margin-top: 40px;
+      margin-top: 30px;
       text-align: center;
-      font-size: 14px;
+      font-size: 13px;
       letter-spacing: 1px;
     }
     footer h4 {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       color: #888;
     }
     footer a {
@@ -126,6 +157,27 @@
   </header>
 
   <h1>VIDEO<br>EDITOR</h1>
+
+  <!-- SERVICIOS -->
+  <div class="section-title">SERVICIOS</div>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Edición Vertical Dinámica</h3>
+      <p>Reels, TikToks y Shorts con ritmo ágil, retención visual, cortes precisos y sound design para captar audiencia rápido.</p>
+    </div>
+    <div class="service-card">
+      <h3>Subtítulos & Gráficos</h3>
+      <p>Subtitulado dinámico, resaltados de texto, emojis animados y elementos visuales clave para enganchar sin audio.</p>
+    </div>
+    <div class="service-card">
+      <h3>Anuncios & Eventos</h3>
+      <p>Videos promocionales para marcas, boliches, DJs y productos. Estética nocturna, cortes al ritmo y llamados a la acción.</p>
+    </div>
+    <div class="service-card">
+      <h3>Contenido Horizontal</h3>
+      <p>Edición para canales de YouTube, resúmenes de streams, videopodcasts y piezas de formato largo en 16:9.</p>
+    </div>
+  </div>
 
   <!-- CONTENIDO VERTICAL -->
   <div class="section-title">CONTENIDO VERTICAL</div>
